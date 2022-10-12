@@ -1,0 +1,30 @@
+[
+    {    
+        "modelo":"ryzen 3",
+        "core": 4,
+        "ghz": "3.6 ghz",
+        "precio" : "150€",
+        "imagen" :"ryzen-3.jpg"
+    },
+    {
+        "modelo":"ryzen 5500" ,
+        "core":6 ,
+        "ghz":"4.0ghz" ,
+        "precio" : "200€",
+        "imagen" : "ryzen-5.jpg"
+    },
+    {
+        "modelo": "ryzen 5700g" ,
+        "core": 8,
+        "ghz": "4,2ghz",
+        "precio" : "300€",
+        "imagen" :"ryzen-7.jpg"
+    },
+    {
+        "modelo": "ryzen 5900x",
+        "core": 16,
+        "ghz": "4,4 ghz",
+        "precio" : "400€",
+        "imagen" : "ryzen-9.jpg"
+    }
+]

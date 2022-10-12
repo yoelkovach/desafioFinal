@@ -1,0 +1,28 @@
+[{
+    "modelo": "intel i9 11900",
+    "core": "8 nucleos y 16 hilos",
+    "ghz": "5ghz",
+    "precio" : "521€",
+    "imagen" :"i9.jpg"
+},
+{
+    "modelo":"intel i7 11700f" ,
+    "core": 8,
+    "ghz": "4,8ghz",
+    "precio" : "324€",
+    "imagen" : "i7.jpg"
+},
+{
+    "modelo": "intel i5 11400f",
+    "core": 6,
+    "ghz": "4,4ghz",
+    "precio" : "175€",
+    "imagen" :"i5.jpg"
+},
+{
+    "modelo":"intel i3 12100" ,
+    "core": 4,
+    "ghz": "3,3ghz",
+    "precio" : "140€",
+    "imagen" :"i3.jpg"
+}]
