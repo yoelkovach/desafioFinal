@@ -10,49 +10,77 @@ class procesadores{
         console.log(`el procesador ${this.modelo} esta compuesto por ${this.core} nucleos e logra llegar a una velocidad media de ${this.ghz} y costa unos ${this.precio}`)
     }
 }
+// tutor mire le dejo mi codigo de literalmente 3 dias para solucionar el problema que tenia al no poder pushear el json al array asi se rie un toque jajajajaj, igualmente fue un tema muy dificil
+//  y todavia no lo tengo del todo resuelto porque aun me falta solucionar lo de las imagenes pero debo entregarlo luego le muestro el proyecto final asi veo que opina
 
-// let amd = []
-// const cargarAmd = async() =>{
-//     const response = await fetch("amd.json")
-//     const data = await response.json()
-//     console.log(data)    
-//     for(var i in amd){
-//         amd[i].modelo
+    // let amd = []
+    // const cargarAmd = async() =>{
+    //     const response = await fetch("amd.json")
+    //     const data = await response.json()
+    //     console.log(data)    
+    //     for(var i in amd){
+    //         amd[i].modelo
+            
+    //     }
+    // }
+
+
+    // const response = await fetch("http://127.0.0.1:5500/desafio/desafioFinal/amd.json")
+    // const json = await response.text()
+
+    // json.forEach8function(function(modelo)){
+    //     console.log(valor)
+    // }
+
+
+
         
-//     }
-// }
+    // localStorage.setItem("amd", JSON.stringify(amd) )
+
+    // async function amdF(){
+    //     const response = await fetch("http://127.0.0.1:5500/desafio/desafioFinal/amd.json")
+    //     const json = await response.text()
+
+    //     console.log(JSON.parse(json))
+    // }
+    // // amdF()
+    // amd.push(amdF())
+    // let amdContainer = {}
+
+    // function traerAmd(AMD){
+    //     fetch("http://127.0.0.1:5500/desafio/desafioFinal/amd.json")
+    //     .then((res)=>res.json())
+    //     .then((data) => console.log(data))
+    // }  
+
     
-// localStorage.setItem("amd", JSON.stringify(amd) )
-let amd = []
 
-async function amdF(){
+    // //Revisa si existe en el local y lo trae 
+
+    // if(localStorage.getItem("amd")){
+    //     amd = JSON.parse(localStorage.getItem("amd"))
+    // }
+    // else{
+    //     console.log("Seteando por primera vez el array")
+    //     //Invoco la function async
+    //     cargarAmd()
+    // }
+
+const cargarAmd = async ()=>{
     const response = await fetch("http://127.0.0.1:5500/desafio/desafioFinal/amd.json")
-    const json = await response.text()
-
-    console.log(JSON.parse(json))
-
+    const data = await response.json()
+    console.log(data)
+    for(let procesadoress of data){
+        let nuevoProcesador = new procesadores(procesadoress.modelo, procesadoress.core, procesadoress.precio, procesadoress.imagen)
+        amd.push(nuevoProcesador)
+    }
 }
 
-amdF()
+    let amd = []
 
-json.modelo.forEach(modelo =>{modelo})
+cargarAmd()
 
-// //Revisa si existe en el local y lo trae 
 
-// if(localStorage.getItem("amd")){
-//     amd = JSON.parse(localStorage.getItem("amd"))
-// }
-// else{
-//     console.log("Seteando por primera vez el array")
-//     //Invoco la function async
-//     cargarAmd()
-// }
-
-// amd
-    const procesador1 = new procesadores("ryzen 3350",4, "3.6 GHz","150€", "ryzen-3.jpg")
-    const procesador2 = new procesadores("ryzen 5500",6, "4.0 GHZ","200€", "ryzen-5.jpg")
-    const procesador3 = new procesadores("ryzen 5700g",8, "4,2 GHz","300€", "ryzen-7.jpg")
-    const procesador4 = new procesadores("ryzen 5900x",16, "4,4","400€","ryzen-9.jpg")
 
     // const amd = []
     // amd.push(procesador1, procesador2, procesador3, procesador4)
@@ -86,14 +114,20 @@ json.modelo.forEach(modelo =>{modelo})
     })
 // intel
 
-const Procesador5 = new procesadores("intel i9 11900" ,"8 nucleos y 16 hilos", "5ghz","521€" ,"i9.jpg")
-const Procesador6 = new procesadores("intel i7 11700f" ,8 ,"4,8ghz" ,"324€" ,"i7.jpg")
-const Procesador7 = new procesadores("intel i5 11400f",6 ,"4,4ghz" ,"174€" ,"i5.jpg")
-const Procesador8 = new procesadores("intel i3 12100", 4 ,"3,3", "160€" ,"i3.jpg")
-const intel = []
-intel.push(Procesador5, Procesador6, Procesador7, Procesador8)
 
+const cargarIntel = async ()=>{
+    const response = await fetch("intel.json")
+    const data = await response.json()
+    console.log(data)
+    for(let procesadoresss of data){
+        let nuevoProcesadorr = new procesadores(procesadoresss.modelo, procesadoresss.core, procesadoresss.precio, procesadoresss.imagen)
+        intel.push(nuevoProcesadorr)
+    }
+}
 
+    let intel = []
+
+cargarIntel()
 
 let divProductos1 = document.getElementById("productos1")
 function mostrarIntel(array1){
